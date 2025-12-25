@@ -1,0 +1,155 @@
+body {
+    font-family: Arial;
+    background: rgba(47, 93, 107, 0.397);
+    color: whitesmoke;
+    margin: 0;
+}
+
+.title {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 35px;
+}
+
+/* Category Filter Buttons */
+.filters {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.filter-btn {
+    padding: 10px 25px;
+    margin: 5px;
+    background: #333;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: slategray;
+}
+
+/* Gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 20px;
+}
+
+.gallery-item {
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.08);
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.541);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.lightbox-img {
+    width: 60%;
+    border-radius: 10px;
+}
+
+.close,
+.prev,
+.next {
+    position: absolute;
+    font-size: 45px;
+    color: white;
+    cursor: pointer;
+}
+
+.close {
+    top: 15px;
+    right: 30px;
+}
+
+.prev {
+    left: 40px;
+    top: 50%;
+}
+
+.next {
+    right: 40px;
+    top: 50%;
+}
+
+/* IMAGE FILTER BUTTONS */
+.img-filters {
+    margin-top: 20px;
+}
+
+.img-filters button {
+    padding: 8px 16px;
+    margin: 3px;
+    border: none;
+    border-radius: 6px;
+    background: #222;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.img-filters button:hover {
+    background: slategray;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .lightbox-img {
+        width: 85%;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* Fade Animation for Lightbox Image */
+.fade {
+    animation: fadeEffect 0.5s ease-in-out;
+}
+
+@keyframes fadeEffect {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Button Hover Animation */
+button {
+    transition: 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #ff9800;
+}
